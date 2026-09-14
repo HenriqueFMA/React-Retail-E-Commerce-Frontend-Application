@@ -7,5 +7,16 @@ html, body, #root {
 }
 
 body {
-  @apply bg-gray-50 text-gray-900;
+  @apply bg-gray-50 text-gray-900 antialiased;
 }
+
+/* App container */
+.app-hero {
+  /* small decorative gradient for header area */
+  background: linear-gradient(180deg, rgba(99,102,241,0.06), transparent 40%);
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md;
+}
+
