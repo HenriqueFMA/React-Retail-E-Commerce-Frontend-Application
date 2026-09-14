@@ -21,14 +21,8 @@ export default function Nav() {
           </Link>
         </div>
 
-        <div className="flex-1 px-6">
-          <div className="relative max-w-lg mx-auto">
-            <input placeholder="Search products..." className="w-full border rounded-full px-4 py-2 pl-10 focus:outline-none focus:ring-2 focus:ring-indigo-300" />
-            <svg className="w-5 h-5 text-gray-400 absolute left-3 top-2.5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15z" />
-            </svg>
-          </div>
-        </div>
+        {/* search removed - keep spacing */}
+        <div className="flex-1" />
 
         <div className="flex items-center gap-4">
           <Link to="/cart" className="relative inline-flex items-center gap-2 px-3 py-2 bg-white border rounded-full shadow-sm hover:shadow-md">
