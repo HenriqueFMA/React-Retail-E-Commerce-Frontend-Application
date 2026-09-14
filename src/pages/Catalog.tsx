@@ -22,11 +22,15 @@ export default function Catalog() {
       </section>
 
       <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {data?.map((p) => (
-            <ProductCard key={p.id} id={p.id} name={p.name} price={p.price} />
-          ))}
-        </div>
+        {data?.length === 0 ? (
+          <p className="text-center py-12 text-gray-600">No products available.</p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {data?.map((p) => (
+              <ProductCard key={p.id} id={p.id} name={p.name} price={p.price} />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )
