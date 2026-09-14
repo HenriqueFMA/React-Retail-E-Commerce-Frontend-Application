@@ -1,55 +1,53 @@
-# README Template
+# cd15109-intermediate-react-project
 
-Below is a template provided for use when building your README file for students.
+Este repositório contém um app React mínimo de e-commerce implementado para seguir a rubrica do projeto (separação de estado cliente/servidor, Context + reducers para cart/auth, Tailwind, rotas protegidas e testes).
 
-# Project Title
+Quick start
 
-Project description goes here.
+1. Instalar dependências
 
-## Getting Started
-
-Instructions for how to get a copy of the project running on your local machine.
-
-### Dependencies
-
-```
-Examples here
+```bash
+npm install
 ```
 
-### Installation
+2. Rodar servidor de desenvolvimento
 
-Step by step explanation of how to get a dev environment running.
-
-List out the steps
-
-```
-Give an example here
+```bash
+npm run dev
 ```
 
-## Testing
+3. Rodar testes
 
-Explain the steps needed to run any automated tests
-
-### Break Down Tests
-
-Explain what each test does and why
-
-```
-Examples here
+```bash
+npm test
 ```
 
-## Project Instructions
+O que está incluído
 
-This section should contain all the student deliverables for this project.
+- React + Vite + TypeScript
+- Tailwind CSS (configurado)
+- React Router v6 com rota protegida `/checkout`
+- React Query para estado do servidor (lista de produtos e submissão de pedidos)
+- `CartContext` e `AuthContext` usando reducers e persistência em `localStorage`
+- Componentes e páginas básicas: `Nav`, `ProductCard`, `Catalog`, `Product`, `Cart`, `Login`, `Checkout`
+- Testes unitário e de integração com Vitest e React Testing Library
 
-## Built With
+Arquivos de interesse
 
-* [Item1](www.item1.com) - Description of item
-* [Item2](www.item2.com) - Description of item
-* [Item3](www.item3.com) - Description of item
+- [src/App.tsx](src/App.tsx)
+- [src/context/CartContext.tsx](src/context/CartContext.tsx)
+- [src/context/AuthContext.tsx](src/context/AuthContext.tsx)
+- [src/services/api.ts](src/services/api.ts)
+- [src/hooks/useProducts.ts](src/hooks/useProducts.ts)
+- [src/pages](src/pages)
 
-Include all items used to build project.
+Próximos passos sugeridos
 
-## License
+- Melhorar o design visual e acessibilidade
+- Adicionar filtros, busca e ordenação de produtos
+- Sincronizar sessão de autenticação com backend real
+- Aplicar atualizações otimistas para o carrinho
 
-[License](LICENSE.txt)
+Licença
+
+Veja [LICENSE.txt](LICENSE.txt)
