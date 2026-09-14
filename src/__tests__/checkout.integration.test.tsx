@@ -25,8 +25,8 @@ test('full add-to-cart and checkout flow', async () => {
     </MemoryRouter>
   )
 
-  // wait for products to load and add first product
-  const addButtons = await screen.findAllByRole('button', { name: /Add to cart/i })
+  // wait for products to load and add first product (match aria-labels like 'Add <name> to cart')
+  const addButtons = await screen.findAllByRole('button', { name: /Add .* to cart/i })
   await user.click(addButtons[0])
 
   // navigate to cart (select link by role to avoid ambiguous text matches)
