@@ -1,38 +1,38 @@
 # cd15109-intermediate-react-project
 
-Este repositório contém um app React mínimo de e-commerce implementado para seguir a rubrica do projeto (separação de estado cliente/servidor, Context + reducers para cart/auth, Tailwind, rotas protegidas e testes).
+This repository contains a minimal React e-commerce app implemented to follow the project rubric (client/server state separation, Context + reducers for cart/auth, Tailwind, protected routes, and tests).
 
 Quick start
 
-1. Instalar dependências
+1. Install dependencies
 
 ```bash
 npm install
 ```
 
-2. Rodar servidor de desenvolvimento
+2. Run the development server
 
 ```bash
 npm run dev
 ```
 
-3. Rodar testes
+3. Run tests
 
 ```bash
 npm test
 ```
 
-O que está incluído
+What is included
 
 - React + Vite + TypeScript
-- Tailwind CSS (configurado)
-- React Router v6 com rota protegida `/checkout`
-- React Query para estado do servidor (lista de produtos e submissão de pedidos)
-- `CartContext` e `AuthContext` usando reducers e persistência em `localStorage`
-- Componentes e páginas básicas: `Nav`, `ProductCard`, `Catalog`, `Product`, `Cart`, `Login`, `Checkout`
-- Testes unitário e de integração com Vitest e React Testing Library
+- Tailwind CSS (configured)
+- React Router v6 with a protected `/checkout` route
+- React Query for server state (product list and order submission)
+- `CartContext` and `AuthContext` using reducers and persistence in `localStorage`
+- Basic components and pages: `Nav`, `ProductCard`, `Catalog`, `Product`, `Cart`, `Login`, `Checkout`
+- Unit and integration tests with Vitest and React Testing Library
 
-Arquivos de interesse
+Key files
 
 - [src/App.tsx](src/App.tsx)
 - [src/context/CartContext.tsx](src/context/CartContext.tsx)
@@ -41,13 +41,13 @@ Arquivos de interesse
 - [src/hooks/useProducts.ts](src/hooks/useProducts.ts)
 - [src/pages](src/pages)
 
-Próximos passos sugeridos
+Suggested next steps
 
-- Melhorar o design visual e acessibilidade
-- Adicionar filtros, busca e ordenação de produtos
-- Sincronizar sessão de autenticação com backend real
-- Aplicar atualizações otimistas para o carrinho
+- Improve the visual design and accessibility
+- Add product filters, search, and sorting
+- Sync authentication with a real backend
+- Apply optimistic updates to the cart
 
-Licença
+License
 
-Veja [LICENSE.txt](LICENSE.txt)
+See [LICENSE.txt](LICENSE.txt)
