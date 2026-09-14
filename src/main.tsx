@@ -9,6 +9,8 @@ import { AuthProvider } from './context/AuthContext'
 
 const queryClient = new QueryClient()
 
+console.log('Starting app...')
+
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>

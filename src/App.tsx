@@ -40,4 +40,7 @@ export default function App() {
           />
         </Routes>
         </main>
-      </ErrorBound
+      </ErrorBoundary>
+    </div>
+  )
+}
