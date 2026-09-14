@@ -7,9 +7,17 @@ import './index.css'
 import { CartProvider } from './context/CartContext'
 import { AuthProvider } from './context/AuthContext'
 
-const queryClient = new QueryClient()
-
-console.log('Starting app...')
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60,
+      retry: false
+    },
+    mutations: {
+      retry: false
+    }
+  }
+})
 
 createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

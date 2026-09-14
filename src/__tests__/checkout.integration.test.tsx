@@ -11,7 +11,7 @@ import { AuthProvider } from '../context/AuthContext'
 test('full add-to-cart and checkout flow', async () => {
   const qc = new QueryClient({ defaultOptions: { queries: { retry: false } } })
   const user = userEvent.setup()
-  vi.spyOn(window, 'alert').mockImplementation(() => {})
+  // expect in-page confirmation instead of alert
 
   render(
     <MemoryRouter initialEntries={["/products"]}>
@@ -67,5 +67,6 @@ test('full add-to-cart and checkout flow', async () => {
   const submitBtn = screen.getByRole('button', { name: /Submit Order/i })
   await user.click(submitBtn)
 
-  await waitFor(() => expect(window.alert).toHaveBeenCalled())
+  // wait for confirmation UI
+  await screen.findByText(/Order submitted/i)
 })

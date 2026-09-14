@@ -54,7 +54,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     localStorage.setItem('cart', JSON.stringify(state))
   }, [state])
 
-  const total = state.items.reduce((s, i) => s + i.price * i.quantity, 0)
+  const total = React.useMemo(() => state.items.reduce((s, i) => s + i.price * i.quantity, 0), [state.items])
 
   return <CartContext.Provider value={{ state, dispatch, total }}>{children}</CartContext.Provider>
 }

@@ -8,16 +8,29 @@ export default function Checkout() {
   const [email, setEmail] = useState('')
   const [address, setAddress] = useState('')
   const mutation = useSubmitOrder()
+  const [orderId, setOrderId] = useState<string | null>(null)
 
   function submit(e: React.FormEvent) {
     e.preventDefault()
     const order = { items: state.items, name, email, address, total }
     mutation.mutate(order, {
-      onSuccess: () => {
+      onSuccess: (res: any) => {
         dispatch({ type: 'clear' })
-        alert('Order submitted!')
+        setOrderId(res?.id ?? String(Date.now()))
       }
     })
+  }
+
+  if (orderId) {
+    return (
+      <div className="max-w-3xl mx-auto">
+        <div className="card p-6 text-center">
+          <h2 className="text-2xl font-bold mb-2">Order submitted</h2>
+          <p className="text-gray-600 mb-4">Thank you — your order id is <span className="font-mono">{orderId}</span></p>
+          <a href="/products" className="px-4 py-2 bg-indigo-600 text-white rounded">Continue shopping</a>
+        </div>
+      </div>
+    )
   }
 
   return (
