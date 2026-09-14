@@ -37,16 +37,10 @@ test('full add-to-cart and checkout flow', async () => {
   const checkoutLink = await screen.findByRole('link', { name: /Checkout/i })
   await user.click(checkoutLink)
 
-  // If redirected to login, perform login first
-  let redirectedToLogin = false
-  try {
-    await screen.findByRole('heading', { name: /Login/i }, { timeout: 500 })
-    redirectedToLogin = true
-  } catch {
-    redirectedToLogin = false
-  }
-
-  if (redirectedToLogin) {
+  // After clicking checkout we may be redirected to the login page.
+  // Check the page heading to decide whether to perform login.
+  const heading = await screen.findByRole('heading', { name: /(Welcome back|Checkout)/i })
+  if (/Welcome back/i.test(heading.textContent || '')) {
     const loginName = screen.getByLabelText(/Name/i)
     const loginEmail = screen.getByLabelText(/Email/i)
     await user.type(loginName, 'Test User')
